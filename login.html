@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Register Page</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="header">
+    <button id="login-btn" class="active-btn">Login</button>
+    <button id="register-btn">Register</button>
+  </div>
+
+  <div class="login-container">
+    <h1>Login</h1>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <div class="register-container">
+    <h1>Register</h1>
+    <form>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+
+      <label for="new-username">Username</label>
+      <input type="text" id="new-username" name="new-username" placeholder="Enter a username">
+
+      <label for="new-password">Password</label>
+      <input type="password" id="new-password" name="new-password" placeholder="Enter a password">
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <script>
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    const loginContainer = document.querySelector('.login-container');
+    const registerContainer = document.querySelector('.register-container');
+
+    // Set the active button to Login by default
+    loginBtn.classList.add('active-btn');
+
+    // Toggle between login and register forms when buttons are clicked
+    loginBtn.addEventListener('click', () => {
+      loginContainer.style.display = 'block';
+      registerContainer.style.display = 'none';
+      loginBtn.classList.add('active-btn');
+      registerBtn.classList.remove('active-btn');
+    });
+
+    registerBtn.addEventListener('click', () => {
+      registerContainer.style.display = 'block';
+      loginContainer.style.display = 'none';
+      registerBtn.classList.add('active-btn');
+      loginBtn.classList.remove('active-btn');
+    });
+  </script>
+</body>
+</html>
+
